@@ -1,0 +1,63 @@
+<div class="container">
+  <div>
+    <label><b>Project</b></label>
+    <label>{{project?.project}}</label>
+    <button  (click)="openProjectDialog()">Search</button>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Task</th>
+        <th scope="col">Parent Task</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Priority</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let task of tasks'>
+
+        <td>{{task.task}}</td>
+        <td>{{task.parentTask}}</td>
+        <td>{{task.startDate}}</td>
+        <td>{{task.endDate}}</td>
+        <td>{{task.priority}}</td>
+        <td><button (click)="onEdit(task)" [disabled]="task.status == 'Completed'">Edit</button></td>
+        <td><button (click)="onEndTask(task)" [disabled]="task.status == 'Completed'">End Task</button></td>
+      </tr>
+    </tbody>
+</table>
+  <!--<app-search (selectedData)="onSearch($event)"></app-search>-->
+  <!--<div>
+    <label>Project</label>
+    <label>{{project?.project}}</label>
+    <button  (click)="openProjectDialog()">Search</button>
+  </div>
+  <div *ngFor='let task of tasks'>
+    <div class="row">
+      <div>
+        <b>Task</b>
+        <div>{{task.task}}</div>
+      </div>
+      <div>
+        <b>Parent</b>
+        <div>{{task.parentTask}}</div>
+      </div>
+      <div>
+        <b>Start Date</b>
+        <div>{{task.startDate}}</div>
+      </div>
+      <div>
+        <b>End Date</b>
+        <div>{{task.endDate}}</div>
+      </div>
+      <div>
+        <b>Priority</b>
+        <div>{{task.priority}}</div>
+      </div>
+      <div>
+        <button (click)="onEdit(task)" [disabled]="task.status == 'Completed'">Edit</button>
+        <button (click)="onEndTask(task)" [disabled]="task.status == 'Completed'">End Task</button>
+      </div>
+    </div>-->
+</div>

@@ -1,0 +1,28 @@
+.container{
+  display:flex;
+  flex-direction: column;
+  width:100%;
+}
+
+.container>span{
+  padding:5px;
+}
+.container>span>*{
+  padding:5px;
+}
+
+.container>span>button{
+  margin:5px;
+}
+
+.container>span>input[type=text]{
+  width:300px;
+}
+
+.hidden{
+  display: none;
+}
+
+span>input[type='submit']{
+  margin-right: 5px;
+}

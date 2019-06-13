@@ -1,0 +1,16 @@
+<span class="container">
+  <div>
+    <label>Task:</label>
+    <input type="text" (input)="onSearch($event,'task')">
+    <label>Parent Task:</label>
+    <input type="text" (input)="onSearch($event,'parentTask')">
+  </div>
+  <div>
+    <label>Priority:</label>
+    <input type="text" (input)="onSearch($event,'priority')">
+    <label>Start Date:</label>
+    <input type="text" (input)="onSearch($event,'startDate')">
+    <label>End Date:</label>
+    <input type="text" (input)="onSearch($event,'endDate')">
+  </div>
+</span>

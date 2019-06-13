@@ -1,0 +1,11 @@
+.container{
+  padding:10px;
+}
+
+.container>div{
+  padding:5px;
+}
+
+.container>div>input{
+  margin:5px;
+}

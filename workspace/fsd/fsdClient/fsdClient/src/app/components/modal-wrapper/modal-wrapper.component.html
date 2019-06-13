@@ -1,0 +1,9 @@
+<app-modal [title]="'Select one below'">
+  <div class="container">
+    <ul class="nav nav-pills nav-stacked nav-modal">
+        <li *ngFor="let data of datas" (click)="onSelect(data)">
+          <a>{{data[field]}}</a>
+        </li>
+      </ul>
+  </div>
+</app-modal>

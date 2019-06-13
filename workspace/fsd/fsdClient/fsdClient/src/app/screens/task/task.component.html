@@ -1,0 +1,47 @@
+<div class="container">
+  <span>
+    <label>Project</label>
+    <label>{{project?.project}}</label>
+    <button  *ngIf="!isUpdate" (click)="openProject()" >Search</button>
+  </span>
+  <span>
+    <label>Task</label>
+    <input type="text"
+    [value]="task.task"
+    (input)="task.task = $event.target.value">
+  </span>
+  <span>
+    <label>Priority</label>
+    <input type="range"
+    min="0"
+    max="30"
+    [value]="task.priority"
+    (input)="task.priority = $event.target.value">
+    <label>{{task.priority}}</label>
+  </span>
+  <span>
+    <label>Parent Task</label>
+    <!--<select [(ngModel)]="parentTask" (change)="onChange($event)">
+      <option [ngValue]="t"  *ngFor="let t of tasks"
+            [hidden]="t._id == parentTask._id ? 'hidden':''">{{t.task}}</option>
+    </select>-->
+    <label>{{this.task.parentTask}}</label>
+    <button  (click)="open()">Search</button>
+  </span>
+  <span>
+    <label>Start Date</label>
+    <input type="date"
+    [value]="task.startDate"
+    (input)="task.startDate = $event.target.value">
+  </span>
+  <span>
+    <label>End Date</label>
+    <input type="date"
+    [value]="task.endDate"
+    (input)="task.endDate = $event.target.value">
+  </span>
+  <span>
+    <button (click)="onAdd()">{{action}}</button>
+    <button>Reset</button>
+  </span>
+</div>

@@ -1,0 +1,12 @@
+.nav-modal {
+  display : block;
+  cursor: default;;
+}
+
+.nav-modal a{
+  color: blue;
+}
+
+.nav-modal a:hover{
+  color: black;
+}

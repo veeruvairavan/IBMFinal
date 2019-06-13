@@ -1,0 +1,8 @@
+a{
+  cursor: default;
+  color:black;
+}
+.selected{
+  border-bottom: 4px solid grey;
+
+}

@@ -1,0 +1,26 @@
+
+<!--<mat-tab-group>
+  <mat-tab label="Add Task"><app-task></app-task></mat-tab>
+  <mat-tab label="View Tasks"><app-view-task></app-view-task></mat-tab>
+</mat-tab-group>-->
+<!--<nav>
+  <a class="nav-link active" (click)="onClick('/')">Add Task</a>
+  <a class="nav-link active" (click)="onClick('/addProject')">Add Project</a>
+  <a class="nav-link active" (click)="onClick('viewTask')">View Task</a>
+</nav>-->
+
+<ul class="nav">
+  <li class="nav-item" [routerLinkActive]="['selected']">
+    <a class="nav-link" [routerLink]="['home']" (click)="onClick('/home')">Add Task</a>
+  </li>
+  <li class="nav-item" [routerLinkActive]="['selected']">
+  <a class="nav-link" [routerLink]="['addProject']" (click)="onClick('/addProject')">Add Project</a>
+  </li>
+  <li class="nav-item" [routerLinkActive]="['selected']">
+  <a class="nav-link" [routerLink]="['addUser']" (click)="onClick('/addUser')">Add User</a>
+  </li>
+  <li class="nav-item" [routerLinkActive]="['selected']">
+    <a class="nav-link" [routerLink]="['viewTask']" (click)="onClick('viewTask')">View Task</a>
+  </li>
+</ul>
+<router-outlet></router-outlet>

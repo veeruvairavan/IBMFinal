@@ -1,0 +1,41 @@
+.container{
+  display:flex;
+  flex-direction: column;
+  width:100%;
+}
+
+.container>div>span{
+  padding:5px;
+}
+.container>span>*{
+  padding:5px;
+}
+
+.container>span>button{
+  margin:5px;
+}
+
+.container label{
+  margin-right:5px;
+}
+
+.container>span>input[type=text]{
+  width:300px;
+}
+
+.container button{
+  margin-right:5px;
+}
+
+.hidden{
+  display: none;
+}
+
+.updateSection{
+  font-size: 15px;
+  margin:5px;
+}
+
+.displaySection input[type=button]{
+  margin-right:5px;
+}

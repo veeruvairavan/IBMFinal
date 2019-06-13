@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="updateSection">
+    <span>
+      <label>Project</label>
+      <input type="text"
+      [value]="project.project"
+      (input)="project.project = $event.target.value">
+    </span>
+    <span>
+      <!--<div>
+        <input type="checkbox" />
+        <label>Set Start and End Date</label>
+      </div>-->
+      <div>
+        <label>Start Date</label>
+        <input type="date"
+        [value]="project.startDate"
+        (input)="project.startDate = $event.target.value">
+      </div>
+      <div>
+        <label>End Date</label>
+        <input type="date"
+        [value]="project.endDate"
+        (input)="project.endDate = $event.target.value">
+      </div>
+    </span>
+    <span>
+      <label>Priority</label>
+      <input type="range"
+      min="0"
+      max="30"
+      [value]="project.priority"
+      (input)="project.priority = $event.target.value">
+      <label>{{project.priority}}</label>
+    </span>
+    <div>
+      <span>
+        <label>Manager</label>
+        <!--<select [(ngModel)]="parentTask" (change)="onChange($event)">
+          <option [ngValue]="t"  *ngFor="let t of tasks"
+                [hidden]="t._id == parentTask._id ? 'hidden':''">{{t.task}}</option>
+        </select>-->
+        <label>{{this.project.manager}}</label>
+        <button  (click)="open()">Search</button>
+      </span>
+    </div>
+    <span>
+      <button (click)="onAdd()">{{action}}</button>
+      <button (click)="onReset()">Reset</button>
+    </span>
+  </div>
+  <div class="displaySection">
+    <input type="text" [(ngModel)]="searchText" placeholder="Search Project">
+    Sort By :
+    <input type="button" value="Project" (click)="sortBy('project')">
+    <input type="button" value="Manager" (click)="sortBy('manager')">
+    <input type="button" value="Priority" (click)="sortBy('priority')">
+    <app-update-display *ngFor="let project of projects | filter : searchText : searchItem"
+            [displayItem]="project"
+            (selectedData)="select($event)">
+    </app-update-display>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+  <span>
+  <label>First name:</label>
+  <input type="text" name="firstname"
+                    [value]="displayInputUser.firstName"
+                    (input)="displayInputUser.firstName = $event.target.value;">
+  </span>
+  <span>
+  <label>Last Name:</label>
+  <input type="text" name="lastname"
+        [value]="displayInputUser.lastName"
+        (input)="displayInputUser.lastName = $event.target.value;">
+  </span>
+  <span>
+    <label>Employee Id:</label>
+  <input type="text" name="empId"
+          [value]="displayInputUser.empId"
+          (input)="displayInputUser.empId = $event.target.value;">
+  </span>
+  <span>
+    <input type="submit" value="Add" (click)="add()" *ngIf="isAdd">
+    <input type="submit" value="Update" (click)="update()" *ngIf="!isAdd">
+    <input type="button" value="Reset" (click)="reset()">
+  </span>
+
+<hr>
+<div>
+  <input type="text" [(ngModel)]="searchText" placeholder="Search First Name">
+  Sort By :
+  <input type="button" value="First Name" (click)="sortBy('firstName')">
+  <input type="button" value="Last Name" (click)="sortBy('lastName')">
+  <input type="button" value="Employee Id" (click)="sortBy('empId')">
+  <app-update-display *ngFor="let displayItem of displayItems | filter : searchText : searchItem"
+          [displayItem]="displayItem"
+          (selectedData)="select($event)">
+  </app-update-display>
+</div>
+</div>

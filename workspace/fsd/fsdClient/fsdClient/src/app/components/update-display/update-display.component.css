@@ -1,0 +1,24 @@
+.row{
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    border-bottom: 1px solid;
+    padding: 2px;
+}
+
+.column{
+  display: flex;
+  flex-direction:column;
+}
+
+.content{
+  width:300px;
+}
+
+.buttonbox{
+  width:100px;
+}
+
+.buttonbox button {
+  margin:5px;
+}

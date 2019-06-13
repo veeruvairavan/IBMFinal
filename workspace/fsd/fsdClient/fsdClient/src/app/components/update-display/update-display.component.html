@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="column content">
+    <div *ngFor="let item of displayItem | keyvalue"
+    (click)="selectedCard(displayItem)">
+      <div *ngIf="item.key.indexOf('_') != 0">
+        <b>{{convertCamelToRegular(item.key)}}</b> : {{getItem(item.value)}}
+      </div>
+    </div>
+  </div>
+  <div class="column buttonbox">
+    <button (click)="delete(displayItem)">Delete</button>
+    <button (click)="edit(displayItem)">Edit</button>
+  </div>
+</div>
